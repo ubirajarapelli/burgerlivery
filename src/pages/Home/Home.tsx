@@ -1,36 +1,22 @@
-import { Button, Layout, Submenu } from "../../components";
+import { Button, Layout } from "../../components";
+import {
+  HomeActionContentElement,
+  HomeBgImage,
+  HomeWrapperElement,
+} from "./Home.style";
+import HomeBg from "../../assets/bg-top.jpg";
 
 export default function Home() {
-  const handleClick = () => {
-    console.log("Clicou");
-  };
-
-  const handleOpen = () => {
-    console.log("Clicou");
-  };
-
-  const handleClose = () => {
-    console.log("Clicou");
-  };
-
-  const menuItems = [
-    { id: 0, text: "menu 1", url: "/home" },
-    { id: 1, text: "menu 2", url: "/contato" },
-    { id: 2, text: "menu 3", url: "/contato" },
-  ];
-
   return (
     <Layout>
-      <Submenu menuItems={menuItems} />
-      <h1>Home</h1>
-      <button onClick={handleClick}>botao normal</button>
-      <Button onClick={handleOpen}>Botão</Button>
-      <Button onClick={handleClose} variant="info" size="large">
-        Botão
-      </Button>
-      <Button onClick={() => {}} variant="danger">
-        Botão
-      </Button>
+      <HomeWrapperElement>
+        <HomeActionContentElement>
+          <h1>Hamburgers para todos os gostos</h1>
+          <p>Nós fazemos deliciosos hamburgers e entregamos na sua porta</p>
+          <Button onClick={() => {}}>Peça agora</Button>
+        </HomeActionContentElement>
+        <HomeBgImage src={HomeBg} alt="placeholder" />
+      </HomeWrapperElement>
     </Layout>
   );
 }

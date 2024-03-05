@@ -75,12 +75,13 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: inherit;
   }
   body {
-    font-family: 'DM Sans', sans-serif;
-  }
-
-  body {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
     min-height: 100vh;
     line-height: 1.38;
+    background-color: #E9E9E9;
   }
 
   h1,

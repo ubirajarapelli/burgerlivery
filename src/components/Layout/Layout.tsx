@@ -1,15 +1,15 @@
-import { Footer, Header } from ".."
+import { Header } from "..";
+import { LayoutWrapperElement } from "./Layout.style";
 
 interface LayoutProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 export const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <Header />
-      <div>{children}</div>
-      <Footer />
+      <LayoutWrapperElement>{children}</LayoutWrapperElement>
     </>
-  )
-}
+  );
+};

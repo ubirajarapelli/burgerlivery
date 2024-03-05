@@ -7,6 +7,7 @@ export const colors = {
   },
   text: {
     main: "#3A3222",
+    title: "#272a50",
   },
   actions: {
     success: {
@@ -15,5 +16,12 @@ export const colors = {
     danger: {
       main: "#C45317",
     },
+  },
+  backgound: {
+    main: "#E9E9E9",
+  },
+  commom: {
+    white: "#ffffff",
+    black: "#000000",
   },
 };
