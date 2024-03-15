@@ -8,7 +8,7 @@ export const LoginWrapperElement = styled.div`
   background-color: ${colors.backgound.main};
 `;
 
-export const LoginActionContentElement = styled.div`
+export const LoginActionContentElement = styled.form`
   flex-grow: 1;
   & h1 {
     line-height: 1.2;

@@ -4,7 +4,7 @@ export const ProductWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 40px;
+  gap: 32px;
   margin-bottom: 32px;
 `;
 
