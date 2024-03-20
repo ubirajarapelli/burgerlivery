@@ -1,12 +1,15 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Button, CategoryList, Layout, ProductCard } from "../../components";
 import { ProductCategories, ProductWrapper } from "./Hamburgers.style";
 import {
   ProductCardContent,
   ProductCardPrice,
 } from "../../components/ProductCard/ProductCard.style";
+import OrderContext from "../../context/OrderContext";
 
 export default function Hamburgers() {
+  const { setHamburgerOrder } = useContext(OrderContext);
+
   const [isLoading, setIsLoading] = useState(false);
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
@@ -72,6 +75,20 @@ export default function Hamburgers() {
     };
   }, []);
 
+  const handleAdd = (productTitle: string) => {
+    const filteredProduct = products.filter(
+      (product) => product.title === productTitle
+    );
+
+    const orderProduct = {
+      name: filteredProduct[0].title,
+      value: filteredProduct[0].values.single,
+      image: filteredProduct[0].image[0],
+    };
+
+    setHamburgerOrder(orderProduct);
+  };
+
   return (
     <Layout>
       <h1>Hamburgers</h1>
@@ -93,7 +110,9 @@ export default function Hamburgers() {
               <ProductCardContent>
                 <h2>{product.title}</h2>
                 <p>{product.description}</p>
-                <Button onClick={() => {}}>Adicionar</Button>
+                <Button onClick={() => handleAdd(product.title)}>
+                  Adicionar
+                </Button>
               </ProductCardContent>
               <ProductCardPrice>
                 {priceFormat(product.values.single)}

@@ -1,9 +1,18 @@
-import { Button } from "..";
+import { Button, ShoppingCart } from "..";
 import { ShoppingCartButton, UserMenuElement } from "./UserMenu.style";
 import ShoppingCartIcon from "../../assets/shoppingCart.svg";
+import { useContext, useState } from "react";
+import OrderContext from "../../context/OrderContext";
 
 export const UserMenu = () => {
+  const { hamburgerOrder } = useContext(OrderContext);
+
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const token = false;
+
+  const handleOpen = () => {
+    setIsDrawerOpen(true);
+  };
 
   return (
     <UserMenuElement>
@@ -21,9 +30,14 @@ export const UserMenu = () => {
           <span>Ubirajara</span>
         </>
       )}
-      <ShoppingCartButton onClick={() => {}}>
+      <ShoppingCartButton onClick={handleOpen}>
         <img src={ShoppingCartIcon} alt="" />
       </ShoppingCartButton>
+      {hamburgerOrder ? hamburgerOrder.value : null}
+      <ShoppingCart
+        isOpen={isDrawerOpen}
+        onClose={() => setIsDrawerOpen(false)}
+      />
     </UserMenuElement>
   );
 };

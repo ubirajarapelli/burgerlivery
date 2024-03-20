@@ -5,6 +5,7 @@ export * from "./Header/Header";
 export * from "./Layout/Layout";
 export * from "./MainMenu/MainMenu";
 export * from "./ProductCard/ProductCard";
+export * from "./ShoppingCart/ShoppingCart";
 export * from "./Submenu/Submenu";
 export * from "./TextField/TextField";
 export * from "./Title/Title";
