@@ -16,12 +16,14 @@ interface OrderContextProviderProps {
 }
 
 const OrderContextProvider = ({ children }: OrderContextProviderProps) => {
-  // const [appettizer, setAppettizer] = useState();
-  const [hamburgerOrder, setHamburgerOrder] = useState();
+  const [appettizer, setAppettizer] = useState();
+  const [hamburgerOrder, setHamburgerOrder] = useState([]);
 
   return (
     <OrderContext.Provider
       value={{
+        appettizer,
+        setAppettizer,
         hamburgerOrder,
         setHamburgerOrder,
       }}

@@ -33,7 +33,6 @@ export const UserMenu = () => {
       <ShoppingCartButton onClick={handleOpen}>
         <img src={ShoppingCartIcon} alt="" />
       </ShoppingCartButton>
-      {hamburgerOrder ? hamburgerOrder.value : null}
       <ShoppingCart
         isOpen={isDrawerOpen}
         onClose={() => setIsDrawerOpen(false)}

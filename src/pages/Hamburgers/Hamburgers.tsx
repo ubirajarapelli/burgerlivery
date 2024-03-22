@@ -6,22 +6,14 @@ import {
   ProductCardPrice,
 } from "../../components/ProductCard/ProductCard.style";
 import OrderContext from "../../context/OrderContext";
+import { priceFormat } from "../../helpers/priceFormat";
 
 export default function Hamburgers() {
-  const { setHamburgerOrder } = useContext(OrderContext);
+  const { hamburgerOrder, setHamburgerOrder } = useContext(OrderContext);
 
   const [isLoading, setIsLoading] = useState(false);
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
-
-  const priceFormat = (price: number) => {
-    console.log("cai aqui?");
-
-    return new Intl.NumberFormat("pt-BR", {
-      style: "currency",
-      currency: "BRL",
-    }).format(price);
-  };
 
   const getCategories = async () => {
     const url = "http://localhost:8000/categories";
@@ -86,7 +78,7 @@ export default function Hamburgers() {
       image: filteredProduct[0].image[0],
     };
 
-    setHamburgerOrder(orderProduct);
+    setHamburgerOrder([...hamburgerOrder, orderProduct]);
   };
 
   return (
